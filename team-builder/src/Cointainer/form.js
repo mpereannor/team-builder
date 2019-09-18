@@ -1,29 +1,23 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 export default function Form(props) {
-    // what data does the form need to populate itself?
-    // what callbacks does the form need to perform
-    // its basic functions of updating fields and submitting?
-    
-    //IMPORTANT 
+const { onNameChange, onAgeChange, onNationalityChange, onMarketValueChange, onFormSubmit } = props;
+const { name, age, nationality, marketValue } = props.form;
 
-    // const { onNameChange, onAgeChange, onFormSubmit } = props;
-    // const { name, age } = props.friendForm;
-    // const isDisabled = () => {
-    //   if (!name || !age) {
-    //     return true;
-    //   }
-    //   return false;
-    // };
+const isDisabled = () => {
+  if(!name || !age || !nationality || !marketValue) {
+    return true;
+  }
+  return false;
+};
 
-    //IMPORTANT 
-  
     return (
       <form>
 
         <label htmlFor='nameInput'>Name</label>
         <input
           value={name}
+          onChange={onNameChange}
           id='nameInput'
           type='text'
         />
@@ -31,26 +25,30 @@ export default function Form(props) {
         <label htmlFor='ageInput'>Age</label>
         <input
           value={age}
+          onChange={onAgeChange}
           id='ageInput'
-          type='number'
+          type='text'
         />
 
-        <label htmlFor='nationalityInput'></label>
+        <label htmlFor='nationalityInput'>Nationality</label>
         <input
             value={nationality}
+            onChange={onNationalityChange}
             id='nationalityInput'
             type='text'
         />
 
-        <label htmlFor='marketValueInput'></label>
+        <label htmlFor='marketValueInput'>Market Value</label>
         <input
             value={marketValue}
+            onChange={onMarketValueChange}
             id='marketValueInput'
             type='text'
         />
 
         <button
-          disabled={false}
+          disabled={isDisabled()}
+          onClick={onFormSubmit}
         >
           submit
         </button>
