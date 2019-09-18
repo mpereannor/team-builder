@@ -50,7 +50,7 @@ const App = () => {
       setForm({
           name: form.name, 
           age: form.age, 
-          nationality: e.target.nationality,
+          nationality: e.target.value,
           marketValue: form.marketValue
       })
   }
@@ -60,7 +60,7 @@ const App = () => {
           name: form.name,
           age: form.age,
           nationality: form.nationality,
-          marketValue: e.target.marketValue
+          marketValue: e.target.value
       });
   };
 
