@@ -1,19 +1,12 @@
 import React, {useState} from 'react';
-import ReactDOM from 'react';
+import ReactDOM from 'react-dom';
+
 import './App.css';
+import EntireTeam from './Cointainer/teamMembers';
 
-// ReactDOM.render(
-//   <Container />,
-//   document.querySelector('#target'),
-// );
+ReactDOM.render(
+  <EntireTeam />,
+  document.querySelector('#root'),
+);
 
-function App() {
-  return (
-
-    <div>
-
-    </div>
-  );
-}
-
-export default App;
+// export default App;
